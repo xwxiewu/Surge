@@ -45,15 +45,8 @@ URL-REGEX,^https?:\/\/socketio\.ctrip\.com\/api,REJECT
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash - reject
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject
 
-# 抖音 去广告&水印
-# 需配合脚本使用 https://Choler.github.io/Surge/Script/douyin.js
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/feed\/ https://aweme.snssdk.com/aweme/v1/feed/ header
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/aweme\/post\/ https://aweme.snssdk.com/aweme/v1/aweme/post/ header
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/follow\/feed\/ https://aweme.snssdk.com/aweme/v1/follow/feed/ header
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/nearby\/feed\/ https://aweme.snssdk.com/aweme/v1/nearby/feed/ header
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/search\/item\/ https://aweme.snssdk.com/aweme/v1/search/item/ header
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/general\/search\/single\/ https://aweme.snssdk.com/aweme/v1/general/search/single/ header
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/hot/search\/video\/list\/ https://aweme.snssdk.com/aweme/v1/hot/search/video/list/ header
+# > Douyin By Choler
+^https?:\/\/(.*)\.amemv\.com\/aweme\/v2\/(follow\/)?feed\/ https://$1.amemv.com/aweme/v1/$2feed/ header
 
 [Script]
 
@@ -94,8 +87,7 @@ tbopener.js = type=http-response,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin
 # > 微信公众号去广告 by Choler&NoByDa
 WeChat.js = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Wechat.js
 
-# > 抖音去广告去水印 by Choler
-http-response ^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/(feed|aweme\/post|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js, requires-body=true, timeout=10, tag=抖音去水印
-
+# > Douyin - *.amemv.com
+douyin = type=http-response,pattern=^https?:\/\/.*\.amemv\.com\/aweme\/v1\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
 [MITM]
 hostname = %APPEND% *.amemv.com,%APPEND% app.bilibili.com,%APPEND% tncj.hortorgames.com,%INSERT% *acs.m.taobao.com,*.ddly666.top,*.uve.weibo.com,*api.smzdm.com,115.28.168.103,a.jxjt888.top,account.wps.cn,ap*.intsig.net,api.591master.com,api.bilibili.com,api.bjxkhc.com,api.flexibits.com,api.gamer.com.tw,api.gotokeep.com,api.hulusaas.com,api.jiaonizuocai.com,api.live.bilibili.com,api.m.jd.com,api.pushover.net,api.revenuecat.com,api.vc.bilibili.com,api.vnision.com,api.weibo.cn,api2.mubu.com,avoscloud.com,aweme.snssdk.com,claritywallpaper.com,cm.szsszykj.com,community.snailsleep.net,d.syshhc.top,dbapi.ganbuguo.com,diary.7english.cn,duoting.tatatimes.com,gw.alicdn.com,haojia.m.smzdm.com,hkj178.com,ios.prod.ftl.netflix.com,lysl2020.com,m.client.10010.com,mapi.weibo.com,mappsv5.caixin.com,mb3admin.com,mp.weixin.qq.com,music.snailsleep.net,newdrugs.dxy.cn,nmeditation.snailsleep.net,r.inews.qq.com,render.alipay.com,snailsleep.net,sports.lifesense.com,subs.platforms.team,subscription-service.neuralprisma.com,trade-acs.m.taobao.com,vip1.kuwo.cn,viva.v21xy.com,weixin110.qq.com,www.i3zh.com,www.mindmeister.com
