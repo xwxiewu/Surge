@@ -81,6 +81,13 @@ DOMAIN,uve.weibo.com,REJECT
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash - reject
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject
 
+# > 跳过 YouTube 视频广告
+(^https?:\/\/[\w-]+\.googlevideo\.com\/.+)(ctier=L)(&.+) $1$3 302
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject
+^https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier) - reject
+^https?:\/\/\s.youtube.com/api/stats/qoe?.*adformat= - reject
+
 ########################################################################################################################
 
 ########################################################################################################################
@@ -308,4 +315,4 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 
 
 [MITM]
-hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, %APPEND% api.bilibili.com, app.bilibili.com, api.live.bilibili.com, %APPEND% *.amemv.com, aweme*.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, %APPEND% testflight.apple.com， %APPEND% duckduckgo.com
+hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, %APPEND% api.bilibili.com, app.bilibili.com, api.live.bilibili.com, %APPEND% *.amemv.com, aweme*.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, %APPEND% testflight.apple.com, %APPEND% duckduckgo.com, %APPEND% *.googlevideo.com, www.youtube.com, s.youtube.com
