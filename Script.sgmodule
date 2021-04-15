@@ -257,9 +257,10 @@ bilibili live = type=http-response,requires-body=1,max-size=0,pattern=https://ap
 bilibili reply = type=http-response,requires-body=1,max-size=0,pattern=https://api.bilibili.com/x/v2/reply/main\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20reply.js
 bilibili view = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/view\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20view%20relate.js
 个人中心 = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/account/mine\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20account.js
-收藏排行 = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/space\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20space.js
+#收藏排行 = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/space\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20space.js
 首页 tab = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20tab.js
 
+哔哩哔哩去开屏广告 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/srk24/profile/master/js/bilibili_splash.js
 
 # > 哔哩哔哩番剧默认开启1080P+
 http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/BiliHD.js, tag=Bilipj
