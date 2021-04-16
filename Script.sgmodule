@@ -39,13 +39,7 @@ DOMAIN,uve.weibo.com,REJECT
 [URL Rewrite]
 
 # > 抖音 去广告&水印
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/aweme\/post\/ https://aweme.snssdk.com/aweme/v1/aweme/post/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/feed\/ https://aweme.snssdk.com/aweme/v1/feed/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/follow\/feed\/ https://aweme.snssdk.com/aweme/v1/follow/feed/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/general\/search\/single\/ https://aweme.snssdk.com/aweme/v1/general/search/single/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/hot/search\/video\/list\/ https://aweme.snssdk.com/aweme/v1/hot/search/video/list/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/nearby\/feed\/ https://aweme.snssdk.com/aweme/v1/nearby/feed/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/search\/item\/ https://aweme.snssdk.com/aweme/v1/search/item/ header
+^https?:\/\/(.*)\.amemv\.com\/aweme\/v2\/(follow\/)?feed\/ https://$1.amemv.com/aweme/v1/$2feed/ header
 
 # > 哔哩哔哩 去广告 
 ^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\? - reject
@@ -164,13 +158,7 @@ http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\
 
 
 # > 抖音 & TikTok Remove Ad & Logo
-douyin_post = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme/v1/aweme\/post\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
-douyin_feed = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/feed\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
-douyin_follow = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/follow\/feed\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
-douyin_naerby = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/nearby\/feed\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
-douyin_item = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/search\/item\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
-douyin_search = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/general\/search\/single\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
-douyin_hot = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/hot\/search\/video\/list\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
+douyin_ad = type=http-response,pattern=^https?:\/\/.*\.amemv\.com\/aweme\/v1\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/,requires-body=1,max-size=-1,script-path=https://github.com/xwxiewu/Surge/blob/master/Script/douyin.js
 
 # > 微博去广告
 http-response ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weibo/wb_launch.js
@@ -223,4 +211,4 @@ weibointl_timeline.js = type=http-response,pattern=^https?:\/\/api\.weibo\.cn/2/
 
 
 [MITM]
-hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weibointl.api.weibo.cn, *.api.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, *.amemv.com, aweme*.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, testflight.apple.com, duckduckgo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, api.meiyan.com, rtbapi.douyucdn.cn
+hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weibointl.api.weibo.cn, *.api.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, *.amemv.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, testflight.apple.com, duckduckgo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, api.meiyan.com, rtbapi.douyucdn.cn
