@@ -7,7 +7,6 @@
 # > 优酷 去广告
 force-http-engine-hosts = %APPEND% vali.cp31.ott.cibntv.net
 
-
 [Rule]
 
 # > 京东  去启动广告
@@ -158,7 +157,7 @@ bilibili view = type=http-response,requires-body=1,max-size=0,pattern=https://ap
 个人中心 = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/account/mine\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20account.js
 首页 tab = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/surge%20bilibili%20tab.js
 
-哔哩哔哩去开屏广告 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/srk24/profile/master/js/bilibili_splash.js
+哔哩哔哩去开屏广告 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/bilibili_splash.js
 
 # > 哔哩哔哩番剧默认开启1080P+
 http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/BiliHD.js, tag=Bilipj
@@ -174,22 +173,22 @@ douyin_search = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme
 douyin_hot = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/hot\/search\/video\/list\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
 
 # > 微博去广告
-http-response ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
-http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count) requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
+http-response ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weibo/wb_launch.js
+http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count) requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weibo/wb_ad.js
 
 
 # > 京东比价
-http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/jd_price.js
 
 
 # > 淘宝比价
-http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
-http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
+http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/tb_price.js
+http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/tb_price.js
 
 
 # > 酷我VIP
-Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
-Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
+Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
+Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
 
 
 # Wangsc1 联通去广告
@@ -197,20 +196,30 @@ http-response ^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd script
 
 
 # HotKids （weixin110.qq.com）
-tbopener.js = type=http-response,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
+tbopener.js = type=http-response,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weixin110.js
 
 
 # > 微信公众号去广告 by Choler&NoByDa
 WeChat.js = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Wechat.js
 
+
 # > TF下载修正
-TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
+TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/TF_Download.js
 
 
-########################################################################################################################
+# > 美颜相机
+http-response ^https:\/\/api\.meiyan\.com\/vip\/user_info requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Meiyanxiangji.js, tag=美颜相机
 
-########################################################################################################################
+
+# > 斗鱼
+douyu.js = type=http-response,pattern=^https?:\/\/rtbapi\.douyucdn\.cn,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyu.js,script-update-interval=0
+
+
+# 微博国际版去广告 （作者：yichahucha）hostname = weibointl.api.weibo.cn, api.weibo.cn
+weibointl_launch.js = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn/portal\.php\?a=get_coopen_ads,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weibo/weibointl_launch.js,script-update-interval=0
+weibointl_timeline.js = type=http-response,pattern=^https?:\/\/api\.weibo\.cn/2/(statuses|groups)/(unread_hot_|friends_)?timeline,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weibo/weibointl_timeline.js,script-update-interval=0
+
 
 
 [MITM]
-hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, *.api.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, *.amemv.com, aweme*.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, testflight.apple.com, duckduckgo.com, *.googlevideo.com, www.youtube.com, s.youtube.com
+hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weibointl.api.weibo.cn, *.api.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, *.amemv.com, aweme*.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, testflight.apple.com, duckduckgo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, api.meiyan.com, rtbapi.douyucdn.cn
