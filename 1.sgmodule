@@ -2,7 +2,7 @@
 #!desc=该模块自用
 
 [Rule]
-URL-REGEX,^http?:\/\/www\.tsytv\.com\.cn\/api\/app\/ios\/ads
+URL-REGEX,^https:\/\/www\.tsytv\.com\.cn\/api\/app\/ios\/ads
 URL-REGEX,^https://weibointl.api.weibo.cn/portal.php\?a=get_coopen_ads
 URL-REGEX,^https:\/\/.+?\.mp4\?ccode=0902
 URL-REGEX,^https:\/\/.+?\.mp4\?sid=
