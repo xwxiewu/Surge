@@ -72,7 +72,7 @@ bilibili view = type=http-response,requires-body=1,max-size=0,pattern=https://ap
 哔哩哔哩去开屏广告 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/bilibili_splash.js
 
 # > 哔哩哔哩番剧默认开启1080P+
-http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/BiliHD.js, tag=Bilipj
+#http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/BiliHD.js, tag=Bilipj
 
 
 # > 抖音 & TikTok Remove Ad & Logo
@@ -129,4 +129,4 @@ weibointl_timeline.js = type=http-response,pattern=^https?:\/\/api\.weibo\.cn/2/
 
 
 [MITM]
-hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weibointl.api.weibo.cn, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, *.amemv.com, *.aweme.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, testflight.apple.com, duckduckgo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, api.meiyan.com, rtbapi.douyucdn.cn
+hostname = trade-acs.m.taobao.com, api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weibointl.api.weibo.cn, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, *.amemv.com, *.aweme.snssdk.com, vip1.kuwo.cn, *.kuwo.com, m.client.10010.com, weixin110.qq.com, mp.weixin.qq.com, testflight.apple.com, *.googlevideo.com, www.youtube.com, s.youtube.com, api.meiyan.com, rtbapi.douyucdn.cn
