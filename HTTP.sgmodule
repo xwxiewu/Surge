@@ -2,7 +2,7 @@
 #!desc=该模块自用
 
 [Rule]
-URL-REGEX,"http:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/
+URL-REGEX,^http:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/
 URL-REGEX,^http:\/\/[\s\S]*\/c\/s\/splashSchedule$
 URL-REGEX,^http:\/\/[\s\S]*\/eapi\/ad\/
 URL-REGEX,^http:\/\/[\s\S]*\/music\/common\/upload\/t_splash_info\/
