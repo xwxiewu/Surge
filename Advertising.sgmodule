@@ -57,7 +57,16 @@ URL-REGEX,^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start,REJECT-TI
 
 ^http:\/\/dssp\.stnts\.com - reject
 ^http?:\/\/www\.tsytv\.com\.cn\/api\/app\/ios\/ads - reject
+^https:\/\/(www|cn)\.pornhub\.com\/_xa\/ads.* - reject
+^https:\/\/.*\.club\/floater.* - reject
+^https:\/\/.*\.fun\/floater.* - reject
+^https:\/\/api-ks\.wtzw\.com\/api\/v(1|2)\/(float-adv|init-adv|reader-adv) - reject
+^https:\/\/fb\.fbstatic\.cn\/api\/ape-images\/.*.jpg? - reject
+^https:\/\/js\.dilidd\.com\/top\.php - reject
+^https:\/\/mp\.weixin\.qq\.com\/mp\/ad.* - reject
 ^https:\/\/static\.api\.m\.panda\.tv\/index\.php\?method=clientconf\.firstscreen&__version=(play_cnmb|(\d+\.){0,3}\d+)&__plat=ios&__channel=appstore - reject
+^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php.*ads&c=ad.* - reject
+^https:\/\/www\.dililitv\.com\/wp-author\/tga\/.*ad=.* - reject
 ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$ - reject
 ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData - reject
 ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+\/allOne\.php\?ad_name - reject
@@ -282,6 +291,7 @@ URL-REGEX,^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start,REJECT-TI
 ^https?:\/\/api\.douban\.com\/v2\/app_ads\/common_ads - reject
 ^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash - reject
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
+^https?:\/\/api\.eshimin\.com\/api\/core\/version - reject
 ^https?:\/\/api\.feng\.com[\s\S]*?Claunch_screen - reject
 ^https?:\/\/api\.feng\.com\/v1\/advertisement\/.*?Claunch - reject
 ^https?:\/\/api\.feng\.com\/v\d\/advertisement\/.*?Claunch - reject
@@ -1016,6 +1026,9 @@ URL-REGEX,^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start,REJECT-TI
 ^https?:\/\/yxyapi2\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/getsAd - reject
 ^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/ - reject
 ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*?Animation - reject
+http://m.yhdm.io/bar/yfgg.js - reject
+http://m.yhdm.io/bar/yfyh.js - reject
+
 
 [Header Rewrite]
 # 建议配合General.sgmodule（https://github.com/TributePaulWalker/Profiles/tree/main/Surge/Module）使用，其他sgmodule按需加入。
