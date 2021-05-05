@@ -11,7 +11,8 @@ force-http-engine-hosts = %APPEND% *.cp31.ott.cibntv.net,*.ott.cibntv.net,119.18
 DOMAIN,api.cupid.dns.iqiyi.com,REJECT
 DOMAIN,video-ad.sm.cn,REJECT-DROP
 DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT
-URL-REGEX,^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start,REJECT-TINYGIF
+URL-REGEX, ^https://app\.bilibili\.com/x/v2/splash/list, REJECT
+URL-REGEX, ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start, REJECT-TINYGIF
 
 [URL Rewrite]
 
