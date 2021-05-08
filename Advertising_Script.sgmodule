@@ -1506,7 +1506,7 @@ BiliBili_标签页处理 = type=http-response,requires-body=1,max-size=0,pattern
 #BiliBili_我的页面处理 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/bilibili_plus.js
 
 # > 哔哩哔哩番剧默认开启1080P+
-#http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/BiliHD.js, tag=Bilipj
+##http-response https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/bilibili/BiliHD.js, tag=Bilipj
 
 # > 抖音 & TikTok Remove Ad & Logo
 抖音_Ads = type=http-response,pattern=^https?:\/\/.*\.amemv\.com\/aweme\/v1\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
@@ -1524,11 +1524,11 @@ http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://
 http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/tb_price.js
 
 # > 酷我VIP
-Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
-Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
+#Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
+#Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
 
 # Wangsc1 联通去广告
-http-response ^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/china_unicom.js, tag=联通轮播去广告
+#http-response ^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/china_unicom.js, tag=联通轮播去广告
 
 # HotKids （weixin110.qq.com）
 tbopener.js = type=http-response,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/weixin110.js
@@ -1544,15 +1544,13 @@ TF下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v
 http-response ^https:\/\/api\.meiyan\.com\/vip\/user_info requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Meiyanxiangji.js, tag=美颜相机
 
 # > 斗鱼
-douyu.js = type=http-response,pattern=^https?:\/\/rtbapi\.douyucdn\.cn,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyu.js,script-update-interval=0
+#douyu.js = type=http-response,pattern=^https?:\/\/rtbapi\.douyucdn\.cn,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyu.js,script-update-interval=0
 
 # 开屏去广告 by blackmatrix7
-嘀嗒出行_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
-美团外卖_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
-京东_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
+#嘀嗒出行_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
+#美团外卖_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
+#京东_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
 
-[Map Local]
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad data="https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/WeChat.json"
 
 [MITM]
 
