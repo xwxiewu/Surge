@@ -1524,8 +1524,8 @@ http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://
 http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/tb_price.js
 
 # > 酷我VIP
-#Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
-#Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
+Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
+Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
 
 # Wangsc1 联通去广告
 #http-response ^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/china_unicom.js, tag=联通轮播去广告
@@ -1549,7 +1549,7 @@ http-response ^https:\/\/api\.meiyan\.com\/vip\/user_info requires-body=1,script
 # 开屏去广告 by blackmatrix7
 #嘀嗒出行_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
 #美团外卖_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
-#京东_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
+京东_开屏去广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/startup.js
 
 
 [MITM]
