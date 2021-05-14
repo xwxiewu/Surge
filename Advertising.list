@@ -194,7 +194,6 @@ DOMAIN,nsclick.baidu.com
 DOMAIN,offnavi.map.baidu.com
 DOMAIN,optimus-ads.amap.com
 DOMAIN,optimus-ads.amap.com.w.alikunlun.com
-DOMAIN,pangolin.snssdk.com
 DOMAIN,pgdt.gtimg.cn
 DOMAIN,pgdt.gtimg.com
 DOMAIN,pgdt.ugdtimg.com
@@ -1802,7 +1801,6 @@ DOMAIN-SUFFIX,analytics.live.com
 DOMAIN-SUFFIX,analytics.msn.com
 DOMAIN-SUFFIX,analytics.query.yahoo.com
 DOMAIN-SUFFIX,analytics.r.msn.com
-DOMAIN-SUFFIX,analytics.snssdk.com
 DOMAIN-SUFFIX,analytics.spotify.com
 DOMAIN-SUFFIX,analytics.tool.lu
 DOMAIN-SUFFIX,analytics.ws.126.net
@@ -4064,7 +4062,6 @@ DOMAIN-SUFFIX,exp.qumi.com
 DOMAIN-SUFFIX,expo123.net
 DOMAIN-SUFFIX,exposebox.com
 DOMAIN-SUFFIX,ext.theglobalweb.com
-DOMAIN-SUFFIX,extlog.snssdk.com
 DOMAIN-SUFFIX,extmoney.i1608.com
 DOMAIN-SUFFIX,extstat.com
 DOMAIN-SUFFIX,eyd77s.com
@@ -5787,7 +5784,6 @@ DOMAIN-SUFFIX,log.outbrain.com
 DOMAIN-SUFFIX,log.p2p.hunantv.com
 DOMAIN-SUFFIX,log.rc.hunantv.com
 DOMAIN-SUFFIX,log.sina.cn
-DOMAIN-SUFFIX,log.snssdk.com
 DOMAIN-SUFFIX,log.spotify.com
 DOMAIN-SUFFIX,log.star.ele.me
 DOMAIN-SUFFIX,log.stat.kugou.com
@@ -8639,7 +8635,6 @@ DOMAIN-SUFFIX,telemetry.appex.bing.net
 DOMAIN-SUFFIX,telemetry.microsoft.com
 DOMAIN-SUFFIX,telemetry.urs.microsoft.com
 DOMAIN-SUFFIX,telstra.imrworldwide.com
-DOMAIN-SUFFIX,temai.snssdk.com
 DOMAIN-SUFFIX,temai.taobao.com
 DOMAIN-SUFFIX,temp.163.com
 DOMAIN-SUFFIX,tencentmind.com
@@ -9707,7 +9702,6 @@ DOMAIN-SUFFIX,xk2012.com
 DOMAIN-SUFFIX,xkwfao.com
 DOMAIN-SUFFIX,xlmc.sandai.net
 DOMAIN-SUFFIX,xlog-va.byteoversea.com
-DOMAIN-SUFFIX,xlog.snssdk.com
 DOMAIN-SUFFIX,xls.go.sohu.com
 DOMAIN-SUFFIX,xlwnx.com
 DOMAIN-SUFFIX,xlylqx.com
@@ -10439,7 +10433,6 @@ URL-REGEX,"^http:\/\/t00img\.yangkeduo\.com\/goods\/.*\.jpeg\?imageView2\/format
 URL-REGEX,"^http:\/\/wap\.js\.10086\.cn\/jsmccClient\/cd\/market_content\/api\/v\d\/market_content\.page\.query$"
 URL-REGEX,"^http:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*\d{4}\.jpg$"
 URL-REGEX,"^http:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*Animation$"
-URL-REGEX,"^https?:\/\/[\s\S]*\.(snssdk|amemv)\.com\/api\/ad\/"
 URL-REGEX,"^https?:\/\/[a-z]*\.rsscc\.com\/trainact\/adver\/"
 URL-REGEX,"^https?:\/\/[a-z]*cap\.caocaokeji\.cn\/advert-bss\/pullAdvert\/"
 URL-REGEX,"^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get\/"
@@ -10524,7 +10517,6 @@ URL-REGEX,^https?+:\/\/(?>101\.201\.175\.228|182\.92\.251\.113)\/promotion\/(?:f
 URL-REGEX,^https?+:\/\/(?>api|b)\.zhuishushenqi\.com\/advert
 URL-REGEX,^https?+:\/\/(?>heic|gw)\.alicdn\.com\/tfs\/TB1.+?-\d{4}-\d{4}\.jpg_1200x1200q90\.jpg_\.\w{3,4}+$
 URL-REGEX,^https?+:\/\/(?>promo|api)\.xueqiu\.com\/promotion\/(?:feed_)?+display
-URL-REGEX,^https?+:\/\/.+?\.(?>amemv|musical|snssdk|tiktokv)\.(?>com|ly)\/(?>api|motor)\/ad\/
 URL-REGEX,^https?+:\/\/.+?\.58cdn\.com\.cn\/brandads\/
 URL-REGEX,^https?+:\/\/.+?\.googlevideo\.com\/.+?(?>&oad|ctier)
 URL-REGEX,^https?+:\/\/.+?\.iydsj\.com\/api\/.+?\/ad
@@ -10532,7 +10524,6 @@ URL-REGEX,^https?+:\/\/.+?\.kakamobi\.cn\/api\/open\/v\d\/advert-sdk\/
 URL-REGEX,^https?+:\/\/.+?\.mp4\?ccode=0902
 URL-REGEX,^https?+:\/\/.+?\.mp4\?sid=
 URL-REGEX,^https?+:\/\/.+?\.pstatp\.com\/img\/ad
-URL-REGEX,^https?+:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/
 URL-REGEX,^https?+:\/\/.+?\/(?>mixer|track2)\?
 URL-REGEX,^https?+:\/\/.+?\/V\d\/splash\/getSplashV\d\.action
 URL-REGEX,^https?+:\/\/.+?\/allOne\.php\?ad_name
@@ -10862,16 +10853,12 @@ URL-REGEX,^https?:\/\/.+?\.l\.qq\.com
 URL-REGEX,^https?:\/\/.+?\.mp4\?ccode=0902
 URL-REGEX,^https?:\/\/.+?\.mp4\?sid=
 URL-REGEX,^https?:\/\/.+?\.pstatp\.com\/img\/ad
-URL-REGEX,^https?:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/
 URL-REGEX,^https?:\/\/.+?\/(mixer|track2)\?
 URL-REGEX,^https?:\/\/.+?\/allOne\.php\?ad_name
 URL-REGEX,^https?:\/\/.+?\/cdn-adn\/
 URL-REGEX,^https?:\/\/.+?\/eapi\/(ad|log)\/
 URL-REGEX,^https?:\/\/.+?\/img\/ad\.union\.api\/
 URL-REGEX,^https?:\/\/.+?\/letv-gug\/
-URL-REGEX,^https?:\/\/.+\.(musical|snssdk)\.(com|ly)\/(api|motor)\/ad\/
-URL-REGEX,^https?:\/\/.+\.(musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/
-URL-REGEX,^https?:\/\/.+\.(snssdk|amemv)\.com\/api\/ad\/
 URL-REGEX,^https?:\/\/.+\.127\.net\/ad
 URL-REGEX,^https?:\/\/.+\.58cdn\.com\.cn\/brandads\/
 URL-REGEX,^https?:\/\/.+\.applovin\.com\/.+\/ad
@@ -10891,7 +10878,6 @@ URL-REGEX,^https?:\/\/.+\.mp4\?ccode=0902
 URL-REGEX,^https?:\/\/.+\.mp4\?cdncode=.+&sdtfrom=v3004
 URL-REGEX,^https?:\/\/.+\.mp4\?sid=
 URL-REGEX,^https?:\/\/.+\.pstatp\.com\/img\/ad
-URL-REGEX,^https?:\/\/.+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/
 URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/.+adformat
 URL-REGEX,^https?:\/\/.+\.youtube\.com\/api\/stats\/ads
 URL-REGEX,^https?:\/\/.+\.youtube\.com\/get_midroll
@@ -10953,7 +10939,6 @@ URL-REGEX,^https?:\/\/7n\.bczcdn\.com\/launchad\/
 URL-REGEX,^https?:\/\/9377\w{2}.com
 URL-REGEX,^https?:\/\/9377\w{2}\.com
 URL-REGEX,^https?:\/\/[\s\S]*\.baidu\.com/.*ad[xs]\.php
-URL-REGEX,^https?:\/\/[\s\S]*\.snssdk\.com\/api\/ad\/
 URL-REGEX,^https?:\/\/[\s\S]*\/.+\.tc\.qq\.com/.*p201.1\.mp4
 URL-REGEX,^https?:\/\/[\s\S]*\/eapi\/ad\/
 URL-REGEX,^https?:\/\/[\s\S]*\/music\/photo_new\/T017R
@@ -11151,11 +11136,6 @@ URL-REGEX,^https?:\/\/asp\.cntv\.myalicdn\.com\/.+\?maxbr=850
 URL-REGEX,^https?:\/\/ast\.api\.moji\.com\/assist\/ad\/moji\/stat
 URL-REGEX,^https?:\/\/atrace\.chelaile\.net\.cn\/adpub\/
 URL-REGEX,^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image
-URL-REGEX,^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/aweme\/stats\/
-URL-REGEX,^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/device\/update\/
-URL-REGEX,^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/screen\/ad\/
-URL-REGEX,^https?:\/\/aweme\.snssdk\.com\/service\/1\/app_logout\/
-URL-REGEX,^https?:\/\/aweme\.snssdk\.com\/service\/2\/app_log
 URL-REGEX,^https?:\/\/b-api\.ins\.miaopai\.com\/1\/ad/
 URL-REGEX,^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/
 URL-REGEX,^https?:\/\/baichuan\.baidu\.com\/rs\/adpmobile\/launch
@@ -11291,7 +11271,6 @@ URL-REGEX,^https?:\/\/fm\.fenqile\.com\/routev2\/other\/startImg\.json
 URL-REGEX,^https?:\/\/foodie-api\.yiruikecorp\.com\/v1\/(banner|notice)\/overview
 URL-REGEX,^https?:\/\/foodie-api\.yiruikecorp\.com\/v\d\/(banner|notice)\/overview
 URL-REGEX,^https?:\/\/free\.sinaimg\.cn\/u1\.img\.mobile\.sina\.cn
-URL-REGEX,^https?:\/\/frontier\.snssdk\.com\/
 URL-REGEX,^https?:\/\/fuss10\.elemecdn\.com\/.+\.mp4
 URL-REGEX,^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4}
 URL-REGEX,^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4}
