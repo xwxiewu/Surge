@@ -153,7 +153,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?+:\/\/(?>api|b)\.zhuishushenqi\.com\/advert - reject
 ^https?+:\/\/(?>heic|gw)\.alicdn\.com\/tfs\/TB1.+?-\d{4}-\d{4}\.jpg_1200x1200q90\.jpg_\.\w{3,4}+$ - reject
 ^https?+:\/\/(?>promo|api)\.xueqiu\.com\/promotion\/(?:feed_)?+display - reject
-^https?+:\/\/.+?\.(?>amemv|musical|snssdk|tiktokv)\.(?>com|ly)\/(?>api|motor)\/ad\/ - reject
 ^https?+:\/\/.+?\.58cdn\.com\.cn\/brandads\/ - reject
 ^https?+:\/\/.+?\.googlevideo\.com\/.+?(?>&oad|ctier) - reject
 ^https?+:\/\/.+?\.iydsj\.com\/api\/.+?\/ad - reject
@@ -161,7 +160,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?+:\/\/.+?\.mp4\?ccode=0902 - reject
 ^https?+:\/\/.+?\.mp4\?sid= - reject
 ^https?+:\/\/.+?\.pstatp\.com\/img\/ad - reject
-^https?+:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
 ^https?+:\/\/.+?\/(?>mixer|track2)\? - reject
 ^https?+:\/\/.+?\/V\d\/splash\/getSplashV\d\.action - reject
 ^https?+:\/\/.+?\/allOne\.php\?ad_name - reject
@@ -493,9 +491,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/.+/img\/ad\.union\.api\/ - reject
 ^https?:\/\/.+/videos/other/.+ - reject
 ^https?:\/\/.+?/V\d\/splash\/getSplashV\d\.action - reject
-^https?:\/\/.+?\.(musical|snssdk)\.(com|ly)\/(api|motor)\/ad\/ - reject
-^https?:\/\/.+?\.(musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/ - reject
-^https?:\/\/.+?\.(snssdk|amemv)\.com\/api\/ad\/ - reject
 ^https?:\/\/.+?\.127\.net\/ad - reject
 ^https?:\/\/.+?\.58cdn\.com\.cn\/brandads\/ - reject
 ^https?:\/\/.+?\.atm\.youku\.com - reject
@@ -510,7 +505,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/.+?\.mp4\?ccode=0902 - reject
 ^https?:\/\/.+?\.mp4\?sid= - reject
 ^https?:\/\/.+?\.pstatp\.com\/img\/ad - reject
-^https?:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
 ^https?:\/\/.+?\.youtube\.com\/api\/stats\/ads - reject
 ^https?:\/\/.+?\.youtube\.com\/get_midroll - reject
 ^https?:\/\/.+?\.youtube\.com\/get_midroll_ - reject
@@ -549,7 +543,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/.+?allOne\.php\?ad_name=main_splash_ios - reject
 ^https?:\/\/.+?ccode=0902 - reject
 ^https?:\/\/.+?resource=article\/recommend\&accessToken= - reject
-^https?:\/\/.+\.(amemv|musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/ - reject
 ^https?:\/\/.+\.58cdn\.com\.cn\/brandads\/ - reject
 ^https?:\/\/.+\.googlevideo\.com\/.+(&oad|ctier) - reject
 ^https?:\/\/.+\.iydsj\.com\/api\/.+\/ad - reject
@@ -557,7 +550,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/.+\.mp4\?ccode=0902 - reject
 ^https?:\/\/.+\.mp4\?sid= - reject
 ^https?:\/\/.+\.pstatp\.com\/img\/ad - reject
-^https?:\/\/.+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
 ^https?:\/\/.+\/(mixer|track2)\? - reject
 ^https?:\/\/.+\/allOne\.php\?ad_name - reject
 ^https?:\/\/.+\/cdn-adn\/ - reject
@@ -586,7 +578,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/7n\.bczcdn\.com\/launchad\/ - reject
 ^https?:\/\/9377\w{2}\.com - reject
 ^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php - reject
-^https?:\/\/[\s\S]*\.snssdk\.com\/api\/ad\/ - reject
 ^https?:\/\/[\s\S]*\/.+?\.tc\.qq\.com/.*?p201.1\.mp4 - reject
 ^https?:\/\/[\s\S]*\/eapi\/ad\/ - reject
 ^https?:\/\/[\s\S]*\/music\/photo_new\/T017R - reject
@@ -596,11 +587,8 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/[\s\s]*baidu\.com/.*ad[xs]\.php - reject
 ^https?:\/\/[\w-.]+\.ott\.cibntv\.net\/[\w\/-]+.mp4\?ccode=02010101 - reject
 ^https?:\/\/[\w-.]+\.ott\.cibntv\.net\/[\w\/-]+.mp4\?sid= - reject
-^https?:\/\/[\w-]+\.(amemv|musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/ - reject
 ^https?:\/\/[\w-]+\.googlevideo\.com\/((?!dclk_video_ads).)+&(oad|ctier) - reject
 ^https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier) - reject
-^https?:\/\/[\w-]+\.snssdk\.com\/.+_ad\/ - reject
-^https?:\/\/[\w-]+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
 ^https?:\/\/[^(apple|10010)]+\.(com|cn)\/(a|A)d(s|v)?(/|\.js) - reject
 ^https?:\/\/[^(apple|10010)]+\.(com|cn)\/(a|A)d(s|v)?(\/|\.js) - reject
 ^https?:\/\/[^bbs].tianya\.cn - reject
@@ -788,8 +776,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/api\.zhuishushenqi\.com\/recommend - reject
 ^https?:\/\/api\.zhuishushenqi\.com\/splashes\/ios - reject
 ^https?:\/\/api\.zhuishushenqi\.com\/user\/bookshelf-updated - reject
-^https?:\/\/api\d?\.musical\.ly\/api\/ad\/ - reject
-^https?:\/\/api\d?\.tiktokv\.com\/api\/ad\/ - reject
 ^https?:\/\/api\d\.futunn\.com\/ad\/ - reject
 ^https?:\/\/api\d\.tuisong\.baidu\.com - reject
 ^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? - reject
@@ -829,11 +815,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/ast\.api\.moji\.com\/assist\/ad\/moji\/stat - reject
 ^https?:\/\/atrace\.chelaile\.net\.cn\/adpub\/ - reject
 ^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image - reject
-^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/aweme\/stats\/ - reject
-^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/device\/update\/ - reject
-^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/screen\/ad\/ - reject
-^https?:\/\/aweme\.snssdk\.com\/service\/1\/app_logout\/ - reject
-^https?:\/\/aweme\.snssdk\.com\/service\/2\/app_log - reject
 ^https?:\/\/b-api\.ins\.miaopai\.com\/1\/ad/ - reject
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
 ^https?:\/\/baichuan\.baidu\.com\/rs\/adpmobile\/launch - reject
@@ -994,7 +975,6 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/foodie-api\.yiruikecorp\.com\/v1\/(banner|notice)\/overview - reject
 ^https?:\/\/foodie-api\.yiruikecorp\.com\/v\d\/(banner|notice)\/overview - reject
 ^https?:\/\/free\.sinaimg\.cn\/u1\.img\.mobile\.sina\.cn - reject
-^https?:\/\/frontier\.snssdk\.com\/ - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\/w\/640\/h\/\d{3,4} - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\/w\/750\/h\/\d{3,4} - reject
