@@ -74,6 +74,8 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 
 ^https?:\/\/(www\.)?g\.cn https://www.google.com/ncr 302
 ^https?:\/\/(www\.)?google\.cn https://www.google.com/ncr 302
+^https?:\/\/(www\.)?g\.com.hk https://www.google.com/ncr 302
+^https?:\/\/(www\.)?google\.com.hk https://www.google.com/ncr 302
 
 ^http?:\/\/(www.)?jd\.com\/ https://www.jd.com/ 302
 ^http?:\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
