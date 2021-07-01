@@ -132,7 +132,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/you\.163\.com\/ https://you.163.com/ 302
 
 
-#^https?:\/\/api.*\.amemv\.com\/aweme\/v\d\/ https://aweme.snssdk.com/aweme/v1/ header
+^https?:\/\/api.*\.amemv\.com\/aweme\/v\d\/ https://aweme.snssdk.com/aweme/v1/ header
 
 ^https:\/\/(www|cn)\.pornhub\.com\/_xa\/ads.* - reject
 ^https:\/\/.*\.bebi\.com\/.* - reject
@@ -988,7 +988,7 @@ BiliBili_标签页处理 = type=http-response,requires-body=1,max-size=0,pattern
 
 
 # > 抖音 & TikTok Remove Ad & Logo
-#douyin = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v[12]\/((|follow\/|nearby\/)feed|aweme\/post|hot\/search\/video\/list|mix\/aweme|aweme\/detail)\/\?,requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
+douyin = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v[12]\/((|follow\/|nearby\/)feed|aweme\/post|hot\/search\/video\/list|mix\/aweme|aweme\/detail)\/\?,requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
 
 
 # > 微博去广告
