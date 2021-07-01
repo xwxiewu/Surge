@@ -132,7 +132,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/you\.163\.com\/ https://you.163.com/ 302
 
 
-^https?:\/\/api.*\.amemv\.com\/aweme\/v\d\/ https://aweme.snssdk.com/aweme/v1/ header
+#^https?:\/\/api.*\.amemv\.com\/aweme\/v\d\/ https://aweme.snssdk.com/aweme/v1/ header
 
 ^https:\/\/(www|cn)\.pornhub\.com\/_xa\/ads.* - reject
 ^https:\/\/.*\.bebi\.com\/.* - reject
