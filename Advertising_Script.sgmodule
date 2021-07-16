@@ -605,6 +605,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/heic\.alicdn\.com\/tps\/i4\/.+?\.jpg_1200x1200q90\.jpg_\.heic$ - reject
 ^https?:\/\/hk\.app\.joox\.com\/billsrv\/clientBatchAdReport - reject
 ^https?:\/\/hk\.app\.joox\.com\/retrieval\/getAd - reject
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation\/banner - reject
 ^https?:\/\/hui\.sohu\.com\/predownload2\/? - reject
 ^https?:\/\/huichuan\.sm\.cn\/jsad - reject
 ^https?:\/\/i1\.hoopchina\.com\.cn\/blogfile\/.+?_\d{3}x\d{4} - reject
@@ -731,6 +732,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/mobi\.360doc\.com\/v\d{2}\/Ajax\/festival\.ashx\?op=getfestivaltheme - reject
 ^https?:\/\/mobile-api2011.elong.com\/(adgateway|adv)\/ - reject
 ^https?:\/\/mobile-pic\.cache\.iciba\.com\/feeds_ad\/ - reject
+^https?:\/\/mobileapi-v6\.elong\.com\/adgateway\/ - reject
 ^https?:\/\/mp\.weixin\.qq.com\/mp\/ad_complaint - reject
 ^https?:\/\/mp\.weixin\.qq.com\/mp\/ad_video - reject
 ^https?:\/\/mp\.weixin\.qq.com\/mp\/advertisement_report - reject
@@ -898,6 +900,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/tracker-download\.oss-cn-beijing\.aliyuncs\.com\/SIMPlus\/AD\/ - reject
 ^https?:\/\/tracker-download\.oss-cn-beijing\.aliyuncs\.com\/SIMPlus\/ad_ - reject
 ^https?:\/\/u1\.img\.mobile\.sina\.cn\/public\/files\/image\/\d{3}x\d{2,4}.+?(png|jpg|mp4) - reject
+^https?:\/\/u\d\.iqiyipic\.com\/image\/[\w\/]+\/oad_ - reject
 ^https?:\/\/ugc\.moji001\.com\/sns\/json\/profile\/get_unread - reject
 ^https?:\/\/ulogs\.umeng\.com - reject
 ^https?:\/\/ulogs\.umengcloud\.com - reject
@@ -920,6 +923,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/wenku\.baidu\.com\/shifen\/ - reject
 ^https?:\/\/werewolf\.53site\.com\/Werewolf\/.+?\/getAdvertise\.php - reject
 ^https?:\/\/werewolf\.53site\.com\/Werewolf\/.+?\/getShareVideodb\.php - reject
+^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
 ^https?:\/\/wmedia-track\.uc\.cn - reject
 ^https?:\/\/www.baidu.com\/?action=static&ms=1&version=css_page_2@0.*? - reject
 ^https?:\/\/www.icourse163.org\/.*?(Advertisement) - reject
@@ -960,6 +964,7 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads - reject
 ^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/ - reject
 ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*?Animation - reject
+
 
 [Map Local]
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad data="https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/WeChat.json"
