@@ -17,8 +17,6 @@ DOMAIN,video-ad.sm.cn,REJECT-DROP
 DOMAIN-SUFFIX,cm.bilibili.com,REJECT
 DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT
 
-URL-REGEX,^https?:\/\/(api.*\.amemv|aweme\.snssdk)\.com\/api\/ad\/,REJECT
-
 URL-REGEX, ^https://app\.bilibili\.com/x/v2/splash/list, REJECT
 URL-REGEX, ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start, REJECT-TINYGIF
 URL-REGEX,^http:\/\/vali\.cp31\.ott\.cibntv\.net\/youku\/,REJECT-TINYGIF
@@ -993,7 +991,7 @@ BiliBili_标签页处理 = type=http-response,requires-body=1,max-size=0,pattern
 
 
 # > 抖音 & TikTok Remove Ad & Logo
-douyin = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v[12]\/((|follow\/|nearby\/)feed|aweme\/post|hot\/search\/video\/list|mix\/aweme|aweme\/detail)\/\?,requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
+#douyin = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v[12]\/((|follow\/|nearby\/)feed|aweme\/post|hot\/search\/video\/list|mix\/aweme|aweme\/detail)\/\?,requires-body=1,script-path=https://raw.githubusercontent.com/xwxiewu/Surge/master/Script/douyin.js
 
 
 # > 微博去广告
