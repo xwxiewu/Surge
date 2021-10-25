@@ -7,7 +7,7 @@
 
 http-api = Tartarus@0.0.0.0:6166
 loglevel = notify
-dns-server = 119.29.29.29, 223.5.5.5, 208.67.222.222
+dns-server = 119.29.29.29
 skip-proxy = 192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 127.0.0.1, localhost, *.local
 tun-excluded-routes = 239.255.255.250/32
 wifi-access-http-port = 7222
@@ -20,7 +20,6 @@ show-error-page-for-reject = true
 tls-provider = secure-transport
 wifi-assist = false
 geoip-maxmind-url = https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
-doh-format = json
 network-framework = false
 include-all-networks = false
 include-local-networks = false
