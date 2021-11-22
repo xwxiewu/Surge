@@ -2,31 +2,6 @@
 #!desc=xwxiewu
 #!author=xwxiewu
 
-
-[General]
-
-http-api = Tartarus@0.0.0.0:6166
-loglevel = notify
-dns-server = 119.29.29.29
-skip-proxy = 192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 127.0.0.1, localhost, *.local
-tun-excluded-routes = 239.255.255.250/32
-wifi-access-http-port = 7222
-wifi-access-socks5-port = 7221
-proxy-test-url = http://www.gstatic.com/generate_204
-test-timeout = 3
-allow-wifi-access = false
-ipv6 = false
-show-error-page-for-reject = true
-tls-provider = secure-transport
-wifi-assist = false
-geoip-maxmind-url = https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
-network-framework = false
-include-all-networks = false
-include-local-networks = false
-
-force-http-engine-hosts = %APPEND% *.cp31.ott.cibntv.net,*.ott.cibntv.net,119.18.193.135,119.79*,122.14.246.33,123.59.31.1,124.14*,124.193*,175.102.178.52,211.162*,220.112*
-
-
 [Rule]
 
 AND,((URL-REGEX,\/amdc\/mobileDispatch),(USER-AGENT,%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*)),REJECT
@@ -54,28 +29,7 @@ URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
 URL-REGEX,https://api\.zhihu\.com/commercial_api,REJECT
 URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
 
-DOMAIN-SUFFIX,mcs.snssdk.com,DIRECT // 抖音
-DOMAIN-SUFFIX,sf1-ttcdn-tos.pstatp.com,DIRECT // 抖音
-DOMAIN-SUFFIX,sf3-ttcdn-tos.pstatp.com,DIRECT // 抖音
-DOMAIN-SUFFIX,sf6-ttcdn-tos.pstatp.com,DIRECT // 抖音
-DOMAIN-SUFFIX,i.snssdk.com,DIRECT // 抖音
-DOMAIN-SUFFIX,mon.snssdk.com,DIRECT // 抖音
-DOMAIN-SUFFIX,log.snssdk.com,DIRECT // 抖音
-DOMAIN-SUFFIX,lianmengapi-lq.snssdk.com,DIRECT // 抖音
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppStore/AppStore.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list,DIRECT
-RULE-SET,SYSTEM,DIRECT
-RULE-SET,LAN,DIRECT
-RULE-SET,https://raw.githubusercontent.com/xwxiewu/Surge/master/WhiteList.list,DIRECT,update-interval=10800
-RULE-SET,https://raw.githubusercontent.com/xwxiewu/Surge/master/Advertising.list,REJECT,update-interval=10800
-DOMAIN-SET,https://raw.githubusercontent.com/xwxiewu/Surge/master/Advertising_Domain.list,REJECT
-
 [URL Rewrite]
-
-^https?:\/\/(www\.)?g\.cn https://www.google.com/ncr 302
-^https?:\/\/(www\.)?google\.cn https://www.google.com/ncr 302
-^https?:\/\/(www\.)?g\.com.hk https://www.google.com/ncr 302
-^https?:\/\/(www\.)?google\.com.hk https://www.google.com/ncr 302
 
 ^http?:\/\/(www.)?jd\.com\/ https://www.jd.com/ 302
 ^http?:\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
