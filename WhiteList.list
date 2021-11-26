@@ -24,6 +24,7 @@ DOMAIN,msg.umeng.com
 DOMAIN,msg.umengcloud.com
 DOMAIN,mtalk.google.com
 DOMAIN,origin-a.akamaihd.net
+DOMAIN,picanalysis.vivo.com.cn
 DOMAIN,pubads.g.doubleclick.net
 DOMAIN,router.asus.com
 DOMAIN,sycm.mmstat.com
@@ -31,6 +32,7 @@ DOMAIN,tracking.miui.com
 DOMAIN,translate.googleapis.com
 DOMAIN,update.googleapis.com
 DOMAIN,vd.l.qq.com
+DOMAIN,xivanalysis.com
 DOMAIN-KEYWORD,aria2
 DOMAIN-KEYWORD,speedtest
 DOMAIN-KEYWORD,thunder
@@ -39,10 +41,12 @@ DOMAIN-KEYWORD,xlliveud
 DOMAIN-KEYWORD,xunlei
 DOMAIN-KEYWORD,yunpan
 DOMAIN-SUFFIX,blog.google
+DOMAIN-SUFFIX,blog.google // Google Blog
 DOMAIN-SUFFIX,dizhensubao.getui.com
 DOMAIN-SUFFIX,f.video.weibocdn.com
 DOMAIN-SUFFIX,fus.cdn.krcom.cn
 DOMAIN-SUFFIX,googletraveladservices.com
+DOMAIN-SUFFIX,googletraveladservices.com // Google Flights
 DOMAIN-SUFFIX,hiwifi.com
 DOMAIN-SUFFIX,ip6-localDOMAIN
 DOMAIN-SUFFIX,ip6-loopback
