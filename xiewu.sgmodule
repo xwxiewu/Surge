@@ -37,6 +37,10 @@ URL-REGEX,https?:\/\/youtubei.googleapis.com\/youtubei\/.+(ad|log),REJECT
 URL-REGEX,https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adformat,REJECT
 URL-REGEX,https?:\/\/[\w-]+\.googlevideo\.com\/.+&oad,REJECT-TINYGIF
 
+# > 人人视频 去广告
+AND, ((USER-AGENT,PUClient*), (NOT,((DOMAIN-SUFFIX,rr.tv)))), REJECT
+URL-REGEX, ^https?:\/\/api\.rr\.tv\/(?:ad\/getAll$|storage/business/rootName/app/homePage), REJECT
+
 [URL Rewrite]
 
 ^http://msga/.cupid/.iqiyi/.com\/scp2\.gif - reject
