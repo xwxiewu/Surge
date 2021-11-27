@@ -1,7 +1,3 @@
-/*
-README：https://github.com/yichahucha/surge/tree/master
- */
-
 const path1 = "serverConfig";
 const path2 = "wareBusiness";
 const path3 = "basicConfig";
@@ -35,8 +31,8 @@ if (url.indexOf(path2) != -1) {
     let msg = ""
     request_history_price(shareUrl)
         .then(data => {
-            if (data.priceTrend.series.length == 0) throw new Error('Whoops!')
-            msg = priceSummary(data.priceTrend)
+            if (!data.single.lowerPriceyh) throw new Error('Whoops!')
+            msg = priceSummary(data)
         })
         .catch(error => msg = "暂无价格信息")
         .finally(() => {
@@ -62,186 +58,53 @@ if (url.indexOf(path2) != -1) {
 }
 
 function priceSummary(data) {
-	data = data.series[0]
-	let summary = `🍵 当前: ${parseFloat(data.current / 100.0)}${getSpace(8)}最低: ${parseFloat(data.min / 100.0)}${getSpace(8)}最高: ${parseFloat(data.max / 100.0)}`;
-	const list = historySummary(data.data);
-	list.forEach((item, index) => {
-		summary += `\n${item.Name}${getSpace(8)}${item.Price}${getSpace(8)}${item.Date
-			}${getSpace(8)}${item.Difference}`;
-	});
-	return summary;
-}
-
-function historySummary(list) {
-	let currentPrice, lowest30, lowest90, lowest180, lowest360, price11, price618;
-	list = list.reverse().slice(0, 360);
-	list.forEach((item, index) => {
-		const date = getExactTime(item.x);
-		let price = parseFloat(item.y / 100.0);
-		if (index == 0) {
-			currentPrice = price;
-			price618 = {
-				Name: "六一八价格",
-				Price: "-",
-				Date: "-",
-				Difference: "-",
-				price: "-",
-			};
-			price11 = {
-				Name: "双十一价格",
-				Price: "-",
-				Date: "-",
-				Difference: "-",
-				price: "-",
-			};
-			lowest30 = {
-				Name: "三十天最低",
-				Price: `¥${String(price)}`,
-				Date: date,
-				Difference: difference(currentPrice, price),
-				price,
-			};
-			lowest90 = {
-				Name: "九十天最低",
-				Price: `¥${String(price)}`,
-				Date: date,
-				Difference: difference(currentPrice, price),
-				price,
-			};
-			lowest180 = {
-				Name: "一百八最低",
-				Price: `¥${String(price)}`,
-				Date: date,
-				Difference: difference(currentPrice, price),
-				price,
-			};
-			lowest360 = {
-				Name: "三百六最低",
-				Price: `¥${String(price)}`,
-				Date: date,
-				Difference: difference(currentPrice, price),
-				price,
-			};
-		}
-		if (date.indexOf("06-18") != -1) {
-			price618.price = price;
-			price618.Price = `¥${String(price)}`;
-			price618.Date = date;
-			price618.Difference = difference(currentPrice, price);
-		}
-		if (date.indexOf("11-11") != -1) {
-			price11.price = price;
-			price11.Price = `¥${String(price)}`;
-			price11.Date = date;
-			price11.Difference = difference(currentPrice, price);
-		}
-		if (index < 30 && price < lowest30.price) {
-			lowest30.price = price;
-			lowest30.Price = `¥${String(price)}`;
-			lowest30.Date = date;
-			lowest30.Difference = difference(currentPrice, price);
-		}
-		if (index < 90 && price < lowest90.price) {
-			lowest90.price = price;
-			lowest90.Price = `¥${String(price)}`;
-			lowest90.Date = date;
-			lowest90.Difference = difference(currentPrice, price);
-		}
-		if (index < 180 && price < lowest180.price) {
-			lowest180.price = price;
-			lowest180.Price = `¥${String(price)}`;
-			lowest180.Date = date;
-			lowest180.Difference = difference(currentPrice, price);
-		}
-		if (index < 360 && price < lowest360.price) {
-			lowest360.price = price;
-			lowest360.Price = `¥${String(price)}`;
-			lowest360.Date = date;
-			lowest360.Difference = difference(currentPrice, price);
-		}
-	});
-	return [lowest30, lowest90, lowest180, lowest360, price618, price11];
+	const lower = data.single.lowerPriceyh;
+	const lower_date = changeDateFormat(data.single.lowerDateyh);
+	const lower_msg = "〽️ 历史最低到手价:   ¥" + String(lower) + "   " + lower_date
+	const curret_msg = (data.single.currentPriceStatus ? "   当前价格" + data.single.currentPriceStatus : "") + "   (仅供参考)";
+	return lower_msg + curret_msg;
 }
 
 async function request_history_price(share_url) {
 	const options = {
 		headers: {
-			"User-Agent":
-				"bijiago/1.4.2 (com.bijiago.app; build:65; iOS 14.5.1) Alamofire/4.9.1",
-			"Content-Type": "application/x-www-form-urlencoded",
+			"Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+			"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 - mmbWebBrowse - ios"
 		},
 	};
 
 	const rid = new Promise(function (resolve, reject) {
-		options.url = "https://app.bijiago.com/service/product?app_platform=ios&app_version=65&device=750%2A1334&opt=product&posi=default&url=" + encodeURIComponent(share_url);
+		options.url = "https://bijiatool-v2.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx?methodName=getBiJiaInfo_wxsmall&p_url=" + encodeURIComponent(share_url);
 		$tool.get(options, function (error, response, data) {
 			if (!error) {
-				resolve(JSON.parse(data))
+				resolve(JSON.parse(transferString(data)))
 			} else {
 				reject(error)
 			}
 		})
 	})
-
-	const priceTrend = (rid, dq_id) => {
-		return new Promise(function (resolve, reject) {
-			options.url = "https://app.bijiago.com/service/product"
-			options.body = `app_platform=ios&app_version=10000&append_promo=1&dp_id=${dq_id}&from=url&opt=priceTrend&rid=${rid}`
-			$tool.post(options, function (error, response, data) {
-				if (!error) {
-					resolve(JSON.parse(data));
-				} else {
-					reject(error)
-				}
-			})
-		})
-	}
 	const ridData = await (rid)
-	const priceTrendData = await (priceTrend(ridData.rid, ridData.product.dp_id))
-	return priceTrendData
+	return ridData
 }
 
-function getExactTime(time) {
-	var date = new Date(time * 1000);
-	var year = date.getFullYear() + "-";
-	var month =
-		(date.getMonth() + 1 < 10
-			? "0" + (date.getMonth() + 1)
-			: date.getMonth() + 1) + "-";
-	var dates = date.getDate();
-	return year + month + dates;
+function changeDateFormat(cellval) {
+	const date = new Date(parseInt(cellval.replace("/Date(", "").replace(")/", ""), 10));
+	const month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+	const currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+	return date.getFullYear() + "-" + month + "-" + currentDate;
 }
 
-function difference(currentPrice, price) {
-    let difference = sub(currentPrice, price)
-    if (difference == 0) {
-        return "-"
-    } else {
-        return `${difference > 0 ? "↑" : "↓"}${String(Math.abs(difference))}`
-    }
-}
-
-function sub(arg1, arg2) {
-    return add(arg1, -Number(arg2), arguments[2]);
-}
-
-function add(arg1, arg2) {
-    arg1 = arg1.toString(), arg2 = arg2.toString();
-    var arg1Arr = arg1.split("."), arg2Arr = arg2.split("."), d1 = arg1Arr.length == 2 ? arg1Arr[1] : "", d2 = arg2Arr.length == 2 ? arg2Arr[1] : "";
-    var maxLen = Math.max(d1.length, d2.length);
-    var m = Math.pow(10, maxLen);
-    var result = Number(((arg1 * m + arg2 * m) / m).toFixed(maxLen));
-    var d = arguments[2];
-    return typeof d === "number" ? Number((result).toFixed(d)) : result;
-}
-
-function getSpace(length) {
-    let blank = "";
-    for (let index = 0; index < length; index++) {
-        blank += " ";
-    }
-    return blank;
-}
+//替换所有的回车换行  
+function transferString(content) {  
+    var string = content;  
+    try{  
+        string=string.replace(/\r\n/g,"")  
+        string=string.replace(/\n/g,"");  
+    }catch(e) {  
+        alert(e.message);  
+    }  
+    return string;  
+} 
 
 function adword_obj() {
     return {
