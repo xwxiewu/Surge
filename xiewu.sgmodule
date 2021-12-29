@@ -1243,6 +1243,7 @@ USER-AGENT,neteasemusic*,REJECT
 ^https:\/\/j-image\.missfresh\.cn\/img_(.+)\.(jpg|jpeg|gif|png)\?iopcmd=convert&dst=webp&q=85$ - reject
 ^https:\/\/j-image\.missfresh\.cn\/img_(.+)\.gif$ - reject
 ^https:\/\/js\.dilidd\.com\/top\.php - reject
+^https:\/\/link\.zhihu\.com\/\?target=(https?)?(%3A|:)?(\/\/|%2F%2F)?(.*?)(&source.*)?$ http://$4 302
 ^https:\/\/m\.ctrip\.com\/restapi\/.+\/json\/tripAds - reject
 ^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
 ^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
@@ -2731,10 +2732,15 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData - reject
 ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*?Animation - reject
 http:\/\/analytics\.163\.com\/ntes - reject
+https://m\.weibo\.cn/comments/hotflow.*max_id=.* - reject
 https://www\.google\.com\.hk\/search\?q=([\w.]+)&(.+) https://www.google.com.sg/search?q=$1&safe=off 302
+https://www\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
+https://www\.zhihu\.com/api/v4/hot_recommendation - reject
+https://www\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
+https://www\.zhihu\.com/commercial_api/banners_v3/mobile_banner - reject
+https://zhuanlan\.zhihu\.com/api/articles/\d+/recommendation - reject
 https:\/\/appconf\.mail\.163\.com\/mmad\/get\.do - reject
 https?:\/\/ssports\.iqiyi\.com\/app\/ - reject
-
 
 [Map Local]
 
