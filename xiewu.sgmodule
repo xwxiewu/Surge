@@ -1201,12 +1201,6 @@ USER-AGENT,neteasemusic*,REJECT
 # 人人视频VIP
 ^https:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail\?(.+)quality=\w+(.+) https://api.rr.tv/drama/app/get_combined_drama_detail?(.+)quality=AI_OD(.+) 302
 
-(^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|reply|history|v\d/msgfeed).+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+) $1&s_locale=zh-Hans_PH$5&sim_code=51503$7 header
-(^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|reply|history|v\d\/(fav|msgfeed)).+?)(&s_locale=zh-Hans_[A-Z]{2})(.+?)(&sim_code=\d+)(.+) $1&s_locale=zh-Hans_PH$6&sim_code=51503$8 header
-(^https?:\/\/gspe\d*-ssl\.ls\.apple\.)(com|cn)(\/.*)(country_code=[A-Z]{2})(.*) $1$2$3country_code=US$5 header
-(^https?:\/\/gspe\d*-ssl\.ls\.apple\.)(com|cn)(\/.*)(environment=[a-z/-]{4,})(.*) $1$2$3environment=prod$5 header
-(^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/.+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+) $1&s_locale=zh-Hans_PH$35&sim_code=51503$5 header
-(https:\/\/www\.google\.com([.a-z]+)?\/.+)(&safe=(active|strict)&)(.+) $1&safe=off 302
 ^http://msga/.cupid/.iqiyi/.com\/scp2\.gif - reject
 ^http:\/\/(www.)?aicoin\.cn\/$ https://www.aicoin.com/ 302
 ^http:\/\/.+\.iqiyipic\.com\/image\/.+\/ad\/.+\.jpg - reject
@@ -1702,6 +1696,7 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/.+?\/cdn-adn\/ - reject
 ^https?:\/\/.+?\/client?functionId=lauch\/lauchConfig&appName=paidaojia - reject
 ^https?:\/\/.+?\/client\/phpui2\/ - reject
+^https?:\/\/.+?\/commercial_api\/ - reject
 ^https?:\/\/.+?\/eapi\/(ad|log)\/ - reject
 ^https?:\/\/.+?\/eapi\/[ad|event]\/ - reject
 ^https?:\/\/.+?\/eapi\/ad\/ - reject
@@ -1892,6 +1887,7 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/ad\/ - reject
 ^https?:\/\/api\.gotokeep\.com\/ads - reject
 ^https?:\/\/api\.gotokeep\.com\/ads\/ - reject
+^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad - reject
 ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad/ - reject
 ^https?:\/\/api\.hanju\.koudaibaobao\.com\/api\/carp\/kp\? - reject
 ^https?:\/\/api\.haohaozhu\.cn\/index\.php\/home\/AppInit\/getStartPhoto - reject
@@ -1998,6 +1994,7 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv - reject
 ^https?:\/\/app\.58\.com\/api\/log\/ - reject
 ^https?:\/\/app\.api\.ke\.com\/config\/config\/bootpage - reject
+^https?:\/\/app\.badmintoncn\.com\/mag\/operative\/v\d\/ad\/ - reject
 ^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash\/ - reject
 ^https?:\/\/app\.ddpai\.com\/d\/api\/v\d\/config\/get\/bootscreen - reject
 ^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement\/ - reject
@@ -2741,6 +2738,8 @@ https://www\.zhihu\.com/commercial_api/banners_v3/mobile_banner - reject
 https://zhuanlan\.zhihu\.com/api/articles/\d+/recommendation - reject
 https:\/\/appconf\.mail\.163\.com\/mmad\/get\.do - reject
 https?:\/\/ssports\.iqiyi\.com\/app\/ - reject
+
+
 
 [Map Local]
 
