@@ -5,6 +5,10 @@
 ^https:\/\/api\.zhihu\.com\/commercial_api\/real_time_launch_v2
 知乎推荐列表正则
 ^https:\/\/api\.zhihu\.com\/topstory\/recommend
+知乎配置
+^https:\/\/appcloud2\.zhihu\.com\/v3\/config$
+知乎首页右下角悬浮
+^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer$
 知乎问题回答列表广告(不同手机观察接口不一样)
 ^https:\/\/api\.zhihu\.com\/v4\/questions\/\d+\/answers\?
 ^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?
@@ -36,6 +40,8 @@ vgtime开屏页正则
 ^https:\/\/r\.inews\.qq\.com\/getTopicSelectList
 腾讯新闻专题-视频精选
 ^https:\/\/r\.inews\.qq\.com\/getQQNewsSpecialListItemsV2
+腾讯新闻-热点精选(财经-查看更多精选内容)
+^https:\/\/r\.inews\.qq\.com\/getTwentyFourHourNews
 QQ音乐开屏广告
 ^https:\/\/us\.l\.qq\.com\/exapp
 */
@@ -144,6 +150,28 @@ if (url.indexOf("api.zhihu.com/commercial_api/real_time_launch_v2") != -1 && met
         body.paging = null;
         body.data = null;
         console.log('成功');
+    }
+} else if (url.indexOf("appcloud2.zhihu.com/v3/config") != -1 && method == getMethod) {
+    console.log('知乎-appcloud2 config配置');
+    if (body.hasOwnProperty('config') && body.config.hasOwnProperty('zhcnh_thread_sync')
+        && body.config.zhcnh_thread_sync.hasOwnProperty('ZHBackUpIP_Switch_Open')) {
+        if (body.config.zhcnh_thread_sync.ZHBackUpIP_Switch_Open === '1') {
+            body.config.zhcnh_thread_sync.ZHBackUpIP_Switch_Open = '0';
+            console.log('ZHBackUpIP_Switch_Open改为0');
+        } else {
+            console.log('无需更改ZHBackUpIP_Switch_Open');
+        }
+    } else {
+        console.log("body:" + $response.body);
+        $notification.post(notifiTitle, '知乎-appcloud2 config配置', "字段错误");
+    }
+} else if (url.indexOf("api.zhihu.com/commercial_api/app_float_layer") != -1 && method == getMethod) {
+    console.log('知乎-首页右下角悬浮框');
+    if (body.hasOwnProperty('feed_egg')) {
+        console.log('成功');
+        body = {};
+    } else {
+        console.log('无需处理');
     }
 } else if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -1 && method == getMethod) {
     console.log('起点-开屏页');
@@ -274,6 +302,8 @@ if (url.indexOf("api.zhihu.com/commercial_api/real_time_launch_v2") != -1 && met
     qqNewsAdList(body, '腾讯新闻-话题列表');
 } else if (url.indexOf("r.inews.qq.com/getQQNewsSpecialListItemsV2") != -1 && method == postMethod) {
     qqNewsAdList(body, '腾讯新闻-视频精选(专题)');
+} else if (url.indexOf("r.inews.qq.com/getTwentyFourHourNews") != -1 && method == postMethod) {
+    qqNewsAdList(body, '腾讯新闻-热点精选');
 } else if (url.indexOf('us.l.qq.com/exapp?') != -1 && method == getMethod) {
     console.log('qq音乐-开屏页');
     if (body.data === undefined) {
