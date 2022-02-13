@@ -22,7 +22,7 @@ if (url.indexOf("afd.baidu.com/afd/entry") != -1 && method == getMethod) {
         console.log("url:" + url);
         $notification.post(notifiTitle, "贴吧-tiebaads/commonbatch", "adCmd参数为null");
     } else {
-        console.log('tiebaads/commonbatch,adCmd = ' + adCmd);
+        console.log('commonbatch: ' + adCmd);
         if (body.error_code == 0) {
             if (body.res.ad === undefined) {
                 console.log('ad字段为undefined');
@@ -30,6 +30,8 @@ if (url.indexOf("afd.baidu.com/afd/entry") != -1 && method == getMethod) {
                 console.log('ad字段为空');
             } else {
                 body.res.ad = [];
+                // 即使ad有内容 也不一定显示广告
+                // 因为如果服务器下发的数据少了一些字段同样是无广告的
                 console.log('成功');
             }
         } else {
@@ -89,6 +91,20 @@ if (url.indexOf("afd.baidu.com/afd/entry") != -1 && method == getMethod) {
         console.log("body:" + $response.body);
         $notification.post(notifiTitle, "贴吧-sync", "无bear_sid_type字段");
     }
+
+    // 回帖栏的广告
+    if (body.hasOwnProperty('advertisement_config')) {
+        if (body.advertisement_config == null) {
+            console.log('无需处理advertisement_config');
+        } else {
+            console.log("advertisement_str:" + body.advertisement_config.advertisement_str);
+            body.advertisement_config = null;
+        }
+    } else {
+        console.log("body:" + $response.body);
+        $notification.post(notifiTitle, "贴吧-sync", "无advertisement_config字段");
+    }
+
 } else {
     $notification.post(notifiTitle, "路径/请求方法匹配错误:", method + "," + url);
 }
