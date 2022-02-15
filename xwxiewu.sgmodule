@@ -1281,10 +1281,6 @@ USER-AGENT,neteasemusic*,REJECT
 
 [URL Rewrite]
 
-# 人人视频VIP
-^https:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail\?(.+)quality=\w+(.+) https://api.rr.tv/drama/app/get_combined_drama_detail?(.+)quality=AI_OD(.+) 302
-
-
 (.*video_id=\w{32})(.*watermark=)(.*)(91mjw)(?!.*?(\.css|\.js|\.jpeg|\.jpg|\.png|\.gif|\.ico)).*(91porn\.com)(?!.*?(\.css|\.js|\.jpeg|\.png|\.gif|\.ico)).*(?<=(carrier|account|sim|sys|geo)_region=)(cn|mo)(?<=(carrier|account|sys)_region=)CN(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+)&ctier=L(&.+)(^https?:\/\/[\w-]+\.googlevideo\.com\/.+)(ctier=L)(&.+)(^https?:\/\/app\.biliintl.com\/intl\/.+)(&sim_code=\d+)(.+)(^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|reply|history|v\d\/(fav|msgfeed)).+?)(&s_locale=zh-Hans_[A-Z]{2})(.+?)(&sim_code=\d+)(.+)(^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/.+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+)(btbdys)(?!.*?(\.css.*|\.js.*|\.jpeg|cdn-cgi|\.ico|\.png|\.gif)).*(gimytv)(?!.*?(\.css.*|\.js.*|\.jpeg|cdn-cgi|\.ico|\.png|\.gif)).*(javbus)(?!.*?(\.css.*|\.js.*|\.jpeg|cdn-cgi|\.ico|\.png|\.gif)).*(libvio)(?!.*?(\.css|\.js|\.jpeg|\.png|\.php|\.gif)).*(missav)(?!.*?(\.css.*|\.js.*|\.jpeg|cdn-cgi|\.ico|\.png|\.gif)).*(missav).*?\api.js$ - reject
 (nfmovies)(?!.*?(\.css|\.js|\.jpeg|\.png|\.gif)).*(pornhub)(?!.*?(\.css|\.js|\.jpeg|\.png|\.gif|\.ico)).*(pornhub)./ht.js. - reject
 (ps|sv|offnavi|newvector|ulog.imap|newloc)(.map)?.(baidu|n.shifen).com - reject
@@ -1440,7 +1436,6 @@ USER-AGENT,neteasemusic*,REJECT
 ^https:\/\/m.360buyimg.com\/mobilecms\/s640x1136_jfs\/ - reject
 ^https:\/\/m5.amap.com\/ws\/valueadded\/ - reject
 ^https:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ - reject
-^https:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$,REJECT
 ^https:\/\/m\.ctrip\.com\/restapi\/.+\/json\/tripAds - reject
 ^https:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\/ - reject
 ^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
@@ -1454,7 +1449,6 @@ USER-AGENT,neteasemusic*,REJECT
 ^https:\/\/msg\.umengcloud\.com\/admsg\/ - reject
 ^https:\/\/pages\.xiaohongshu\.com\/data\/native\/matrix_switches* - reject
 ^https:\/\/pn\.baidu\.com\/iad\/.+\.json - reject
-^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
 ^https:\/\/static\.api\.m\.panda\.tv\/index\.php\?method=clientconf\.firstscreen&__version=(play_cnmb|(\d+\.){0,3}\d+)&__plat=ios&__channel=appstore - reject
 ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php.*ads&c=ad.* - reject
 ^https:\/\/www\.dililitv\.com\/wp-author\/tga\/.*ad=.* - reject
@@ -2167,8 +2161,6 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/ - reject
 ^https?:\/\/api-one\.wallstcn\.com\/apiv\d\/advertising\/ - reject
 ^https?:\/\/api-release\.wuta-cam\.com\/ad_tree - reject
-^https?:\/\/api.*\.amemv\.com\/aweme\/v2\/feed\/ https://aweme.snssdk.com/aweme/v1/feed/ header
-^https?:\/\/api.*\.amemv\.com\/aweme\/v\d\/ https://aweme.snssdk.com/aweme/v1/ header
 ^https?:\/\/api.catch.gift\/api\/v3\/pagead\/ - reject
 ^https?:\/\/api.chelaile.net.cn\/adpub\/ - reject
 ^https?:\/\/api.chelaile.net.cn\/goocity\/advert\/ - reject
@@ -2844,7 +2836,6 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/(?>ad_|advertisement|getappmsgad) - reject
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/(ad_|advertisement|getappmsgad) - reject
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/ad.* - reject
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad data="https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/WeChat.json"
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url response-body "advertisement_num":\d,"advertisement_info":\[.+\], response-body "advertisement_num":0,"advertisement_info":[],
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad^https?:\/\/mp\.weixin\.qq\.com\/mp\/report - reject
 ^https?:\/\/mpcs\.suning\.com\/mpcs\/dm\/getDmInfo - reject
@@ -3136,7 +3127,6 @@ USER-AGENT,neteasemusic*,REJECT
 ^https?:\/\/wapwenku\.baidu\.com\/view\/fengchaoTwojump\/ - reject
 ^https?:\/\/wapwenku\.baidu\.com\/view\/fengchao\/ - reject
 ^https?:\/\/wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua - reject
-^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/airQuality\?x=(-?\d+)&y=(-?\d+)&z=(-?\d+).*(country=CN)?.* https://tiles.waqi.info/tiles/usepa-aqi/$4/$2/$3.png?&scale=2&country=US&colorFormat=agr header
 ^https?:\/\/web\.chelaile\.net\.cn\/api\/adpub\/ - reject
 ^https?:\/\/webboot\.zhangyue\.com\/zyapi\/bookstore\/ad\/ - reject
 ^https?:\/\/webboot\.zhangyue\.com\/zycl\/api\/ad\/ - reject
@@ -3296,6 +3286,7 @@ tsyndicate.*?\.push\.js - reject
 vidoza.*?\.(html|js) - reject
 yfyh.js|yfdi.js - reject
 zhenbuka(?!.*?(vodplay|\.ico|\.js|\.css|\.php|\.jpg|\.png)).*zhenbuka.*?/voddetail/.*​(pornhub).*/_xa/ads_.* - reject
+
 
 [MITM]
 
