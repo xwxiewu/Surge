@@ -21,9 +21,6 @@ DOMAIN-SUFFIX,applvn.com,REJECT
 DOMAIN,adui.tg.meitu.com,REJECT
 DOMAIN,aaid.uyunad.com,REJECT
 
-# ～ 爱奇艺广告屏蔽
-ip-cidr,203.107.63.154/32,REJECT
-
 # ～ 多多视频去开屏广告
 DOMAIN-SUFFIX,bayescom.com,REJECT
 
