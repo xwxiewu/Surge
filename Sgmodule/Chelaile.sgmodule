@@ -25,7 +25,7 @@ DOMAIN,aaid.uyunad.com,REJECT
 DOMAIN-SUFFIX,bayescom.com,REJECT
 
 # ～ 车来了（包括小程序）
-DOMAIN-SUFFIX atrace.chelaile.net.cn,REJECT
+DOMAIN-SUFFIX,atrace.chelaile.net.cn,REJECT
 DOMAIN,logs.chelaile.net.cn,REJECT
 DOMAIN,ad.chelaile.net.cn,REJECT
 
