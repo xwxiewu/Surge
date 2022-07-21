@@ -1,0 +1,45 @@
+#!name=车来了去广告
+#!desc=车来了去广告
+# 搬运地址 https://github.com/ddgksf2013/Cuttlefish
+
+[MITM]
+hostname = cdn.*.chelaileapp.cn, web.chelaile.net.cn
+
+[Rule]
+# ～ 真不卡
+DOMAIN-SUFFIX,ttayy.cn,REJECT
+DOMAIN-SUFFIX,zhengxiaoliu.top,REJECT
+
+# ～ NicoNico
+DOMAIN,ads.nicovideo.jp,REJECT
+
+# ～ HDO
+DOMAIN-SUFFIX,applovin.com,REJECT
+DOMAIN-SUFFIX,applvn.com,REJECT
+
+# ～ 美颜相机去首页和轮播广告
+DOMAIN,adui.tg.meitu.com,REJECT
+DOMAIN,aaid.uyunad.com,REJECT
+
+# ～ 爱奇艺广告屏蔽
+ip-cidr,203.107.63.154/32,REJECT
+
+# ～ 多多视频去开屏广告
+DOMAIN-SUFFIX,bayescom.com,REJECT
+
+# ～ 车来了（包括小程序）
+DOMAIN-SUFFIX atrace.chelaile.net.cn,REJECT
+DOMAIN,logs.chelaile.net.cn,REJECT
+DOMAIN,ad.chelaile.net.cn,REJECT
+
+# ～ 铁路12306
+DOMAIN,ad.12306.cn,REJECT
+
+# ～ 两步路
+DOMAIN-SUFFIX,admobile.top,REJECT
+
+[URL Rewrite]
+
+https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub - reject
+
+https?:\/\/web\.chelaile\.net\.cn\/api\/adpub - reject
